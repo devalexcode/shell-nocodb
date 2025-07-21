@@ -29,10 +29,11 @@ services:
     env_file:
       - .env
     environment:
-      NC_DB: mysql2://nocodb:3306?u=nocodb_mysql_user&p=${MYSQL_NOCODB_USER_PASSWORD}&d=nocodb
+      NC_DB: mysql2://nocodb_mysql:3306?u=nocodb_mysql_user&p=${MYSQL_NOCODB_USER_PASSWORD}&d=nocodb
       NC_AUTH_JWT_SECRET: ${NC_AUTH_JWT_SECRET}
     volumes:
       - nocodb_data:/usr/app/data
+      - ./mysql-init:/docker-entrypoint-initdb.d
     expose:
       - 8080
 
