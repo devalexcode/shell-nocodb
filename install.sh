@@ -79,7 +79,7 @@ else
 fi
 
 CHECK_APP_MAX_ATTEMPTS=5
-CHECK_APP_DELAY_SECONDS=5
+CHECK_APP_DELAY_SECONDS=7
 
 # Función para validar que un puerto esté accesible externamente para una aplicación
 # Recibe Puerto y Nombre de la Aplicación
@@ -96,7 +96,7 @@ check_port_open() {
         sleep ${CHECK_APP_DELAY_SECONDS}
         # Verificar respuesta del VPS
         if nc -z -w5 "${PUBLIC_IP}" "${PORT}"; then
-            echo -e "${GREEN}¡Instalación completada! ${APP_NAME} funcionando y accesible: http://${PUBLIC_IP}:${PORT}${NC}/manager"
+            echo -e "${GREEN}¡Instalación completada! ${APP_NAME} funcionando y accesible: http://${PUBLIC_IP}:${PORT}${NC}"
             return 0
         fi
         attempt=$((attempt + 1))
