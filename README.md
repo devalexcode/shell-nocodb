@@ -86,7 +86,7 @@ chmod +x install.sh
 
 ![shell NocoDB](docs/shell.png)
 
-## Ingresar a n8n
+## Ingresar a NocoDB
 
 Al finalizar, verás un mensaje indicando la URL de acceso a NocoDB:
 
